@@ -26,6 +26,23 @@ button:focus-visible {
   outline: none;
 }
 
+/* 
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+*/
+
+/* .menu__item {
+  font-variation-settings: "wght" 500, "wdth" 95, "slnt" -8;
+} */
+
 .header {
   display: flex;
   flex-direction: column;
@@ -132,6 +149,12 @@ button:focus-visible {
   width: 100%;
 }
 
+.main {
+}
+
+.main-card {
+}
+
 .main__card-list {
   display: flex;
   flex-direction: column;
@@ -142,18 +165,16 @@ button:focus-visible {
 .main__card-list-item {
   border: 2px solid var(--themes-main-color, #000);
   background-color: var(--themes-background);
-  width: min(100%, 696px);
-}
 
-.main__card-list-item:not(:last-child) {
-  margin-block-end: 48px;
+  /* width: min(371px, 696px); */
+  width: min(100%, 696px);
 }
 
 .card_preparation {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 23px 24px;
+  padding: 27px 25px;
 }
 
 .main-card-title {
@@ -161,21 +182,21 @@ button:focus-visible {
   background: var(--themes-background, #fff);
   font-size: var(--main-font-size);
   font-weight: var(--accent-font-weight);
-  min-height: 52px;
-  padding-inline-start: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+  height: min(52px);
 
-.main-card-title.others {
-  min-height: 31px;
+  /* display: flex; */
+
+  /* align-items: center; */
+
+  padding-inline-start: 10px;
+  white-space: pre-line;
+
+  /* padding: 6px 45px 10px 4px; */
 }
 
 .card__image {
   width: 100%;
   height: 100%;
-  min-height: 371px;
   object-fit: cover;
 }
 
@@ -187,7 +208,7 @@ button:focus-visible {
 .card__image-text-element {
   position: absolute;
   top: 23px;
-  right: 9px;
+  right: 7px;
   color: var(--themes-main-color);
   font-family: var(--accent-font);
   font-size: var(--alt-font-size);
@@ -217,6 +238,8 @@ button:focus-visible {
   font-weight: var(--main-font-weight);
   padding-block-end: 25px;
   line-height: 116.667%;
+
+  /* width: clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem); */
 }
 
 .card__like-button {
@@ -226,10 +249,11 @@ button:focus-visible {
   gap: 7px;
   flex-shrink: 0;
   min-width: 169px;
-  min-height: 37px;
+  min-height: 38px;
 }
 
 .card__icon-button {
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -290,9 +314,78 @@ button:focus-visible {
   transition: all 0.3s ease;
 }
 
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core,
+.like-icon:active .main-body {
+  fill: var(--main-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--main-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--main-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart 0.3s 0.1s ease-in alternate;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s 0.3s ease-in alternate;
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .footer {
-  margin-block-start: 55px;
-  padding-block-end: 100px;
+  margin-block: 35px 102px;
 }
 
 .footer__button {
@@ -316,112 +409,4 @@ button:focus-visible {
   height: 28px;
 }
 
-.modal-window {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: min(341px);
-  min-height: 195px;
-  color: var(--themes-main-color);
-  border: 2px solid var(--themes-main-color);
-  background: var(--themes-background);
-  padding-inline: 42px;
-  padding-block: 32px;
-}
-
-.modal-window__content {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  width: min(257px);
-  height: min(63px);
-}
-
-.modal-window__icon-floppy {
-  display: flex;
-  width: 39px;
-  height: 39px;
-}
-
-.modal-window__title {
-  color: var(--themes-main-color);
-  font-family: var(--accent-font);
-  font-size: var(--alt-font-size);
-  font-weight: var(--accent-font-weight);
-  line-height: 150%;
-  text-transform: uppercase;
-}
-
-.modal-window__button {
-  display: flex;
-  width: min(257px);
-  height: min(38px);
-  border: 2px solid var(--themes-main-color);
-  font-family: var(--accent-font);
-  font-size: var(--alt-font-size);
-  font-weight: var(--accent-font-weight);
-  line-height: 150%;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-}
-
-dialog::backdrop {
-  opacity: 0.75;
-  background: var(--themes-main-color, #000);
-}
-
-.preparation-to-work img {
-  filter: hue-rotate(90deg);
-}
-
-.blank-sheet img {
-  filter: grayscale(0.5) blur(10px);
-}
-
-.if-i-cant img {
-  filter: invert(100%);
-}
-
-.pursuite-of-ideal img {
-  filter: contrast(175%) brightness(103%);
-}
-
-.whos-nearby img {
-  filter: sepia(100%);
-}
-
-.workaround-strategies img {
-  filter: saturate(200%);
-}
-
-.hands-down img {
-  filter: sepia(1) contrast(2) brightness(200%);
-}
-
-.im-here-now img {
-  filter: grayscale(50%);
-}
-
-@media (width > 450px) {
-  .footer__button {
-    flex-direction: row;
-    min-width: ;
-    width: 335px;
-    min-height: 51px;
-    justify-content: center;
-    padding-block: 5px;
-  }
-
-  .main-card-title {
-    flex-direction: row;
-    min-height: 31px;
-    align-items: center;
-  }
-
-  .modal-window {
-    width: min(357px);
-    min-height: 193px;
-  }
-}
+@media (width <= 375px);

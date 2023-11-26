@@ -21,11 +21,6 @@
   }
 }
 
-button:focus,
-button:focus-visible {
-  outline: none;
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -61,9 +56,6 @@ button:focus-visible {
 
 .theme-menu {
   padding-inline-start: 19px;
-}
-
-.header__theme-menu {
 }
 
 .theme-menu__list {

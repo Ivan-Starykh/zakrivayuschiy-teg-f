@@ -47,6 +47,11 @@ a {
   background-color: transparent;
 }
 
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;

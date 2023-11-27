@@ -47,4 +47,12 @@
       repeating-linear-gradient(to bottom, transparent 0 2px, #000 2px 4px),
       linear-gradient(to bottom, #007f0c 0.01%, #004306);
   }
+
+	.main-card-title {
+		font-variation-settings: 'wght' 785, 'wdth' 110, 'opsz' 0;
+	}
+	
+	.card__text{
+		font-variation-settings: 'wght' 465, 'wdth' 110, 'opsz' 0;
+	} 
 }

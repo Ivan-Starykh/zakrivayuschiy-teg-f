@@ -106,7 +106,7 @@
 .theme-menu__button:active,
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -155,9 +155,11 @@
   font-weight: var(--accent-font-weight);
   min-height: 52px;
   padding-inline-start: 8px;
-  display: flex;
+  white-space: pre-line;
+
+  /* display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; */
 }
 
 .main-card-title.others {
@@ -273,13 +275,13 @@
 
 .button-heart:focus-visible {
   border: 2px solid var(--themes-main-color, #000);
-  transition: all 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .button-like:focus-visible,
 .footer__button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--themes-main-color);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .footer {
@@ -304,7 +306,7 @@
 }
 
 .icon-floppy {
-  width: 28px;
+  width: 29px;
   height: 28px;
 }
 
@@ -407,9 +409,8 @@ dialog::backdrop {
   }
 
   .main-card-title {
-    flex-direction: row;
     min-height: 31px;
-    align-items: center;
+    white-space: normal;
   }
 
   .modal-window {

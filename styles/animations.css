@@ -1,3 +1,42 @@
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  inline-size: 14px;
+  block-size: 14px;
+  margin-inline-start: -19px;
+  animation: arrow 0.5s infinite ease-in-out alternate;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+.theme-menu__button:active,
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+}
+
+.button-like:hover::before,
+.footer__button:hover::before,
+.modal-window__button:hover::before {
+  transform: translateX(100%);
+  background-color: var(--hover-background);
+  color: var(--hover-color);
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
 .like-icon .sparks {
   opacity: 0;
 }
@@ -71,4 +110,16 @@
 .like-icon .contour {
   fill: var(--contour-color);
   transition: fill 0.1s linear;
+}
+
+.button-heart:focus-visible {
+  border: 2px solid var(--themes-main-color, #000);
+  transition: border 0.3s ease;
+}
+
+.button-like:focus-visible,
+.footer__button:focus-visible,
+.modal-window__button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--themes-main-color);
+  transition: box-shadow 0.3s ease;
 }

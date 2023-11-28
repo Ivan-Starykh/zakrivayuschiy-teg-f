@@ -1,4 +1,4 @@
-:root.theme_dark {
+.theme-dark {
   --main-font-weight: 465;
   --accent-font-weight: 785;
   --themes-background: #000;
@@ -15,7 +15,7 @@
     linear-gradient(to bottom, #007f0c 0.01%, #004306);
 }
 
-:root.theme-light {
+.theme-light {
   --themes-background: #fff;
   --hover-color: #fff;
   --hover-background: #fff;
@@ -31,7 +31,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .page {
+  :root.page {
     --main-font-weight: 465;
     --accent-font-weight: 785;
     --themes-background: #000;
@@ -49,10 +49,10 @@
   }
 
   .main-card-title {
-    font-variation-settings: "wght" 785, "wdth" 110, "opsz" 0;
+    font-variation-settings: 'wght' 785, 'wdth' 110, 'opsz' 0;
   }
 
   .card__text {
-    font-variation-settings: "wght" 465, "wdth" 110, "opsz" 0;
+    font-variation-settings: 'wght' 465, 'wdth' 110, 'opsz' 0;
   }
 }

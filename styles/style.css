@@ -1,5 +1,6 @@
 .page {
-  /* min-inline-size: 375px; */
+	min-inline-size: 360px;
+  margin: 0;
   min-block-size: 100dvb;
   background-color: var(--themes-background);
   font-family: var(--main-font, sans-serif);

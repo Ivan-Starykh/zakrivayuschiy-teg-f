@@ -3,7 +3,7 @@
   --accent-font-weight: 785;
   --themes-background: #000;
   --themes-main-color: #00cc14;
-  --hover-color: #00cc14;
+  --hover-color: #fff;
   --hover-background: #00cc14;
   --contour-color: #00cc14;
   --background-image: repeating-linear-gradient(
@@ -36,7 +36,7 @@
     --accent-font-weight: 785;
     --themes-background: #000;
     --themes-main-color: #00cc14;
-    --hover-color: #00cc14;
+    --hover-color: #fff;
     --hover-background: #00cc14;
     --contour-color: #00cc14;
     --background-image: repeating-linear-gradient(

@@ -37,8 +37,7 @@ ol {
   list-style: none;
 }
 
-button,
-a {
+button{
   color: currentcolor;
   font-family: inherit;
   font-size: inherit;

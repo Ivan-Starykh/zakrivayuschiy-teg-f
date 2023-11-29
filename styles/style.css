@@ -164,6 +164,7 @@ body {
   font-family: var(--accent-font);
   font-size: var(--alt-font-size);
   opacity: 0.5;
+  mix-blend-mode: hard-light;
   text-shadow: -1px 0 var(--themes-background), 0 1px var(--themes-background),
     1px 0 var(--themes-background), 0 -1px var(--themes-background);
 }
@@ -259,20 +260,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-/* .footer__button-text,
-.button__text,
-.icon-floppy,
-.modal-window__button-text {
-  mix-blend-mode: hard-light;
-} */
-
-/* .footer__button-text,
-.button__text,
-.icon-floppy,
-.modal-window__button {
-  mix-blend-mode: hard-light;
-} */
 
 .icon-floppy {
   width: 28px;
@@ -407,11 +394,5 @@ dialog::backdrop {
 
   .modal-window__button {
     min-width: 293px;
-  }
-}
-
-@media (width =>1400px) {
-  .main__card-list-item {
-    min-height: 959px;
   }
 }

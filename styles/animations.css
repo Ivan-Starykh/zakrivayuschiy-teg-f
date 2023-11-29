@@ -37,8 +37,8 @@
   mix-blend-mode: difference;
 }
 
-.icon-floppy:hover::before{
-	mix-blend-mode: difference;
+.icon-floppy:hover::before {
+  mix-blend-mode: difference;
 }
 
 .like-icon .sparks {

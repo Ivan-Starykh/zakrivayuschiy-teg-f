@@ -1,6 +1,6 @@
 .page {
   min-inline-size: 320px;
-	width: 100%;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   min-block-size: 100dvb;
@@ -14,8 +14,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-inline: 2px; */
-	/* overflow-x: hidden; */
 }
 
 @supports (font-variation-settings: normal) {
@@ -268,13 +266,13 @@ body {
 .modal-window__button-text {
   mix-blend-mode: hard-light;
 } */
+
 /* .footer__button-text,
 .button__text,
 .icon-floppy,
 .modal-window__button {
   mix-blend-mode: hard-light;
 } */
-
 
 .icon-floppy {
   width: 28px;
